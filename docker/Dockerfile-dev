@@ -1,0 +1,7 @@
+FROM stactools-planet:latest
+
+RUN conda install -c conda-forge pandoc
+
+COPY . /src/stactools-planet
+RUN pip install -r /src/stactools-planet/requirements-dev.txt
+WORKDIR /src/stactools-planet

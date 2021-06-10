@@ -1,0 +1,6 @@
+name: stactools-planet
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - gdal
