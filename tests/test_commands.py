@@ -3,8 +3,9 @@ from tempfile import TemporaryDirectory
 
 import pystac
 
+from stactools.testing import CliTestCase
 from stactools.planet.commands import create_planet_command
-from tests.utils import (TestData, CliTestCase)
+from tests import test_data
 
 
 class ConvertOrderTest(CliTestCase):
@@ -12,8 +13,8 @@ class ConvertOrderTest(CliTestCase):
         return [create_planet_command]
 
     def tearDown(self):
-        thumbnail_path = TestData.get_path(
-            "data-files/planet-order/files/"
+        thumbnail_path = test_data.get_path(
+            "data-files/order/files/"
             "20180119_XXXXXXX_XXXX_3B_Visual_file_format.thumbnail.png")
         thumbnail_metadata_path = "{}.aux.xml".format(thumbnail_path)
         for path in [thumbnail_path, thumbnail_metadata_path]:
@@ -21,8 +22,8 @@ class ConvertOrderTest(CliTestCase):
                 os.remove(path)
 
     def test_converts(self):
-        test_order_manifest = TestData.get_path(
-            'data-files/planet-order/manifest.json')
+        test_order_manifest = test_data.get_path(
+            'data-files/order/manifest.json')
 
         with TemporaryDirectory() as tmp_dir:
             result = self.run_command([
