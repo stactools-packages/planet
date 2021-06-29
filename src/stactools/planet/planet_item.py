@@ -201,42 +201,43 @@ class PlanetItem:
             if media_type == pystac.MediaType.COG:
                 # add bands to asset
                 bands = None
-                if item_type.startswith('SkySat'):
-                    if "panchro" in asset_type:
-                        bands = [SKYSAT_BANDS['PAN']]
-                    elif "analytic" in asset_type:
-                        bands = [
-                            SKYSAT_BANDS['BLUE'], SKYSAT_BANDS['GREEN'],
-                            SKYSAT_BANDS['RED'], SKYSAT_BANDS['NIR']
-                        ]
-                    elif "visual" in asset_type:
-                        bands = [
-                            SKYSAT_BANDS['RED'], SKYSAT_BANDS['GREEN'],
-                            SKYSAT_BANDS['BLUE']
-                        ]
-                elif item_type.startswith("PS"):
-                    if "5b" in asset_type:
-                        bands = [
-                            PSB_BANDS['BLUE'], PSB_BANDS['GREEN'],
-                            PSB_BANDS['RED'], PSB_BANDS['REDEDGE'],
-                            PSB_BANDS['NIR']
-                        ]
-                    elif "analytic" in asset_type:
-                        if item_type == "PSScene3Band":
+                if "udm" not in asset_type:
+                    if item_type.startswith('SkySat'):
+                        if "panchro" in asset_type:
+                            bands = [SKYSAT_BANDS['PAN']]
+                        elif "analytic" in asset_type:
+                            bands = [
+                                SKYSAT_BANDS['BLUE'], SKYSAT_BANDS['GREEN'],
+                                SKYSAT_BANDS['RED'], SKYSAT_BANDS['NIR']
+                            ]
+                        elif "visual" in asset_type:
+                            bands = [
+                                SKYSAT_BANDS['RED'], SKYSAT_BANDS['GREEN'],
+                                SKYSAT_BANDS['BLUE']
+                            ]
+                    elif item_type.startswith("PS"):
+                        if "5b" in asset_type:
+                            bands = [
+                                PSB_BANDS['BLUE'], PSB_BANDS['GREEN'],
+                                PSB_BANDS['RED'], PSB_BANDS['REDEDGE'],
+                                PSB_BANDS['NIR']
+                            ]
+                        elif "analytic" in asset_type:
+                            if item_type == "PSScene3Band":
+                                bands = [
+                                    PSB_BANDS['RED'], PSB_BANDS['GREEN'],
+                                    PSB_BANDS['BLUE']
+                                ]
+                            else:
+                                bands = [
+                                    PSB_BANDS['BLUE'], PSB_BANDS['GREEN'],
+                                    PSB_BANDS['RED'], PSB_BANDS['NIR']
+                                ]
+                        elif "visual" in asset_type:
                             bands = [
                                 PSB_BANDS['RED'], PSB_BANDS['GREEN'],
                                 PSB_BANDS['BLUE']
                             ]
-                        else:
-                            bands = [
-                                PSB_BANDS['BLUE'], PSB_BANDS['GREEN'],
-                                PSB_BANDS['RED'], PSB_BANDS['NIR']
-                            ]
-                    elif "visual" in asset_type:
-                        bands = [
-                            PSB_BANDS['RED'], PSB_BANDS['GREEN'],
-                            PSB_BANDS['BLUE']
-                        ]
                 if bands is not None:
                     asset_eo = EOExtension.ext(asset)
                     asset_eo.bands = bands
