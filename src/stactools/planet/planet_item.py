@@ -78,6 +78,7 @@ PSB_BANDS = {
 
 
 class PlanetItem:
+
     def __init__(self,
                  item_metadata,
                  item_assets,

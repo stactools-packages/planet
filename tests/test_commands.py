@@ -9,6 +9,7 @@ from tests import test_data
 
 
 class ConvertOrderTest(CliTestCase):
+
     def create_subcommand_functions(self):
         return [create_planet_command]
 
