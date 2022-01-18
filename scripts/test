@@ -27,7 +27,6 @@ if [ "${BASH_SOURCE[0]}" = "${0}" ]; then
             docs/*.rst docs/**/*.rst \
             docs/*.ipynb docs/**/*.ipynb
 
-        coverage run --source=${COVERAGE_DIRS} -m unittest discover tests/
-        coverage xml
+	python -m pytest --cov stactools --cov-report term-missing --cov-report xml
     fi
 fi

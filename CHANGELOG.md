@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Use pytest and pytest-cov as stactools does.
 - For CI, always install from requirements-dev.txt before installing stactools-planet.
 - Pin stactools to 0.2.3 in requirements-dev.txt for CI purposes.
 - Remove Python 3.6 from project classifiers and from the CI matrix.
