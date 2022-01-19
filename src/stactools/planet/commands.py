@@ -42,6 +42,7 @@ def convert_order(manifest,
 def create_planet_command(cli):
     """Creates a command group for commands dealing with Planet data
     """
+
     @cli.group('planet', short_help="Commands for working with Planet data")
     def planet():
         pass

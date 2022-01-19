@@ -9,6 +9,7 @@ from stactools.planet import (PlanetItem, PLANET_PROVIDER)
 
 
 class OrderManifest:
+
     def __init__(self, manifest_dict, base_dir):
         self.manifest_dict = manifest_dict
         self.base_dir = base_dir
