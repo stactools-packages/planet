@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+PR [#15](https://github.com/stactools-packages/planet/pull/15) makes the following related changes:
+
 - For CI, always install from requirements-dev.txt before installing stactools-planet.
 - Pin stactools to 0.2.3 in requirements.txt for CI purposes.
 - Remove Python 3.6 from project classifiers and from the CI matrix.
