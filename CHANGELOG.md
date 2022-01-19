@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Use pytest and pytest-cov as stactools does ([#16](https://github.com/stactools-packages/planet/pull/15).
+
 PR [#15](https://github.com/stactools-packages/planet/pull/15) makes the following related changes:
 
 - For CI, always install from requirements-dev.txt before installing stactools-planet.
