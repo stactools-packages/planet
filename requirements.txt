@@ -15,7 +15,7 @@ importlib-resources==5.4.0
 jsonschema==4.4.0
 lxml==4.7.1
 multidict==5.2.0
-numpy==1.22.1
+numpy==1.21.5
 pyparsing==3.0.6
 pyproj==3.3.0
 pyrsistent==0.18.1
