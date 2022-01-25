@@ -17,4 +17,4 @@ def register_plugin(registry):
     registry.register_subcommand(commands.create_planet_command)
 
 
-__version__ = '0.2.0dev'
+__version__ = '0.2.0'
