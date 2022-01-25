@@ -1,15 +1,28 @@
 # stactools-planet
 
-Template repostitory for [stactools](https://github.com/stac-utils/stactools) packages.
+![CI](https://github.com/stactools-packages/planet/actions/workflows/continuous-integration.yml/badge.svg?branch=main)
+![PyPI](https://img.shields.io/pypi/v/stactools-planet)
 
-## How to use
+A "planet" command extension for [stactools](https://github.com/stac-utils/stactools).
 
-1. Clone this repository and name it `stactools-{NAME}`, where `NAME` is your package name.
-   This name should be short, memorable, and a valid Python package name (i.e. it shouldn't start with a number, etc).
-2. Update `setup.cfg` with your package name, description, and such.
-3. Rename `src/stactools.planet` to `src/stactools/{NAME}`.
-4. Rewrite this README to provide information about how to use your package.
-5. Update the LICENSE with your company's information (or whomever holds the copyright).
-6. Update the environment name in `environment.yml`.
-7. Update the environment variables in `.github/workflows/release.yml` to the appropriate values to publish for your organization.
-8. Update all scripts in the `docker` directory to refer to `stactools-{NAME}` and `stactools-{NAME}-dev`.
+## Installation
+
+```
+python -m pip stactools-planet
+```
+
+## Usage
+
+```
+stac planet --help
+```
+
+```
+Usage: stac planet [OPTIONS] COMMAND [ARGS]...
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  convert-order  Convert Planet Order data to STAC Collection
+```
